@@ -2,7 +2,7 @@
 
 A pure Go software implementation of the BLAKE3 hash function.
 
-## Instalation
+## Installation
 
 ```bash
 go get -u github.com/lemon-mint/softblake3
