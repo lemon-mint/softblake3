@@ -131,3 +131,39 @@ func (g *Hasher) Destroy() {
 	g.t = _HasherRegular
 	_blake3_hasher_init(&g.h)
 }
+
+func Sum224(b []byte) (out [224 / 8]byte) {
+	var hasher blake3_hasher
+	_blake3_hasher_init(&hasher)
+	_blake3_hasher_update(&hasher, b)
+	_blake3_hasher_finalize(&hasher, out[:])
+	_blake3_hasher_destroy(&hasher)
+	return
+}
+
+func Sum256(b []byte) (out [256 / 8]byte) {
+	var hasher blake3_hasher
+	_blake3_hasher_init(&hasher)
+	_blake3_hasher_update(&hasher, b)
+	_blake3_hasher_finalize(&hasher, out[:])
+	_blake3_hasher_destroy(&hasher)
+	return
+}
+
+func Sum384(b []byte) (out [384 / 8]byte) {
+	var hasher blake3_hasher
+	_blake3_hasher_init(&hasher)
+	_blake3_hasher_update(&hasher, b)
+	_blake3_hasher_finalize(&hasher, out[:])
+	_blake3_hasher_destroy(&hasher)
+	return
+}
+
+func Sum512(b []byte) (out [512 / 8]byte) {
+	var hasher blake3_hasher
+	_blake3_hasher_init(&hasher)
+	_blake3_hasher_update(&hasher, b)
+	_blake3_hasher_finalize(&hasher, out[:])
+	_blake3_hasher_destroy(&hasher)
+	return
+}

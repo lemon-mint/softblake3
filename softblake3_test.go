@@ -424,6 +424,13 @@ func TestDestroy(t *testing.T) {
 	}
 }
 
+func TestSum256(t *testing.T) {
+	h := Sum256([]byte(testText))
+	if hex.EncodeToString(h[:]) != "b2fbef5a8ea9080eaaee55bbc930d797bab41d42abe20f34126c94f7c5aa03f6" {
+		t.Errorf("hash mismatch: %x != %s", h, "b2fbef5a8ea9080eaaee55bbc930d797bab41d42abe20f34126c94f7c5aa03f6")
+	}
+}
+
 func BenchmarkWrite1024(b *testing.B) {
 	h := New()
 	buffer := make([]byte, 1024)
