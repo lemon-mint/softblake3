@@ -14,8 +14,8 @@ go get -u github.com/lemon-mint/softblake3
 package main
 
 import (
-  "fmt"
   "encoding/hex"
+  "fmt"
 
   "github.com/lemon-mint/softblake3"
 )
@@ -23,8 +23,8 @@ import (
 func main() {
   // Create a new Hasher.
   h := softblake3.New()
-	text := "Hello, World!"
-	h.WriteString(text)
+  text := "Hello, World!"
+  h.WriteString(text)
 
   // Get the hash as a byte slice.
   hash := h.Sum(nil)
